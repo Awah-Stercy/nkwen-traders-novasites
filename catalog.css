@@ -1,18 +1,16 @@
-/* ==========================================
+/* ================================
    NKWEN TRADERS - CATALOG
-   catalog.css
-========================================== */
+================================ */
 
 :root {
-    --navy: #102a43;
-    --navy-light: #243b53;
-    --orange: #f28c28;
-    --orange-light: #ffd8a8;
-    --cream: #fff9f0;
-    --white: #ffffff;
-    --text: #243b53;
-    --muted: #627d98;
-    --border: #d9e2ec;
+    --navy: #102A43;
+    --orange: #F28C28;
+    --light-orange: #FFD8A8;
+    --cream: #FFF9F0;
+    --white: #FFFFFF;
+    --text: #243B53;
+    --muted: #627D98;
+    --border: #D9E2EC;
     --shadow: 0 8px 25px rgba(16, 42, 67, 0.12);
 }
 
@@ -21,6 +19,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
 }
 
 
@@ -38,14 +41,22 @@ a {
 }
 
 
-/* ==========================================
+img {
+    width: 100%;
+    display: block;
+}
+
+
+/* ================================
    NAVIGATION
-========================================== */
+================================ */
 
 header {
     background-color: var(--navy);
+
     position: sticky;
     top: 0;
+
     z-index: 1000;
 }
 
@@ -53,18 +64,24 @@ header {
 .navbar {
     width: 90%;
     max-width: 1200px;
+
     min-height: 70px;
+
     margin: auto;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 }
 
 
 .logo {
-    color: var(--white);
+    color: white;
+
     font-size: 1.5rem;
+
     font-weight: bold;
 }
 
@@ -76,14 +93,17 @@ header {
 
 .nav-links {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+
+    gap: 1.5rem;
+
     list-style: none;
 }
 
 
 .nav-links a {
-    color: var(--white);
+    color: white;
+
+    transition: 0.3s;
 }
 
 
@@ -94,41 +114,40 @@ header {
 
 
 .menu-toggle {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.8rem;
+    display: none;
 }
 
 
-/* ==========================================
+/* ================================
    PAGE HEADER
-========================================== */
+================================ */
 
 .page-header {
     background-color: var(--navy);
-    color: var(--white);
 
-    padding: 4rem 5%;
+    color: white;
 
     text-align: center;
+
+    padding: 5rem 5%;
 }
 
 
 .page-header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
+
     margin-bottom: 1rem;
 }
 
 
 .page-header p {
-    color: #e8eef3;
+    color: #E8EEF3;
 }
 
 
-/* ==========================================
-   CATALOG
-========================================== */
+/* ================================
+   CATALOG SECTION
+================================ */
 
 .catalog-section {
     width: 90%;
@@ -136,17 +155,18 @@ header {
 
     margin: auto;
 
-    padding: 4rem 0;
+    padding: 5rem 0;
 }
 
 
-/* ==========================================
-   SEARCH
-========================================== */
+/* ================================
+   SEARCH BAR
+================================ */
 
 .search-container {
     max-width: 650px;
-    margin: 0 auto 2rem;
+
+    margin: 0 auto 1.5rem;
 }
 
 
@@ -166,39 +186,57 @@ header {
 
     padding: 1rem;
 
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
 
     border-radius: 8px;
 
-    background-color: var(--white);
-
     outline: none;
+
+    font-size: 1rem;
+
+    background-color: white;
+
+    transition: 0.3s;
 }
 
 
 .search-container input:focus {
     border-color: var(--orange);
 
-    box-shadow:
-        0 0 0 3px rgba(242, 140, 40, 0.15);
+    box-shadow: 0 0 0 3px rgba(242, 140, 40, 0.15);
 }
 
 
-/* ==========================================
+/* ================================
+   PRODUCT COUNT
+================================ */
+
+#productCount {
+    color: var(--muted);
+
+    margin-bottom: 2rem;
+}
+
+
+/* ================================
    PRODUCT GRID
-========================================== */
+================================ */
 
 .product-grid {
     display: grid;
 
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 1.5rem;
 }
 
 
+/* ================================
+   PRODUCT CARD
+================================ */
+
 .product-card {
-    background-color: var(--white);
+    background-color: white;
 
     border-radius: 12px;
 
@@ -211,17 +249,32 @@ header {
 
 
 .product-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(16, 42, 67, 0.16);
 }
 
+
+/* PRODUCT IMAGE */
 
 .product-card img {
     width: 100%;
-    height: 210px;
+
+    height: 230px;
 
     object-fit: cover;
+
+    transition: 0.4s;
 }
 
+
+.product-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* PRODUCT INFORMATION */
 
 .product-info {
     padding: 1.5rem;
@@ -230,6 +283,8 @@ header {
 
 .product-info h3 {
     color: var(--navy);
+
+    font-size: 1.2rem;
 
     margin-bottom: 0.5rem;
 }
@@ -245,26 +300,35 @@ header {
 .product-price {
     color: var(--orange);
 
-    font-size: 1.1rem;
-
     font-weight: bold;
 
-    margin-top: 0.5rem;
+    font-size: 1.1rem;
+
+    margin-top: 0.6rem;
 }
 
 
-/* ==========================================
+/* ================================
    NO RESULTS
-========================================== */
+================================ */
 
 .no-results {
     text-align: center;
 
+    background-color: white;
+
     padding: 3rem;
 
-    background-color: var(--white);
-
     border-radius: 12px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.no-results h3 {
+    color: var(--navy);
+
+    margin-bottom: 0.5rem;
 }
 
 
@@ -273,14 +337,14 @@ header {
 }
 
 
-/* ==========================================
+/* ================================
    FOOTER
-========================================== */
+================================ */
 
 .footer {
     background-color: var(--navy);
 
-    color: var(--white);
+    color: white;
 
     padding: 3rem 5% 1rem;
 }
@@ -288,10 +352,12 @@ header {
 
 .footer-content {
     max-width: 1200px;
+
     margin: auto;
 
     display: flex;
-    flex-direction: column;
+
+    justify-content: space-between;
 
     gap: 2rem;
 }
@@ -304,8 +370,8 @@ header {
 
 .footer-links {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+
+    gap: 1.2rem;
 }
 
 
@@ -323,25 +389,15 @@ header {
 
     border-top: 1px solid rgba(255,255,255,0.2);
 
-    color: #bcccdc;
+    color: #BCCCDC;
 }
 
 
-/* ==========================================
+/* ================================
    TABLET
-========================================== */
+================================ */
 
-@media (min-width: 768px) {
-
-    .menu-toggle {
-        display: none;
-    }
-
-
-    .nav-links {
-        flex-direction: row;
-    }
-
+@media (max-width: 900px) {
 
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -349,18 +405,74 @@ header {
 }
 
 
-/* ==========================================
-   DESKTOP
-========================================== */
+/* ================================
+   MOBILE
+================================ */
 
-@media (min-width: 1024px) {
+@media (max-width: 767px) {
 
-    .product-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .menu-toggle {
+        display: block;
+
+        background: none;
+
+        border: none;
+
+        color: white;
+
+        font-size: 1.8rem;
     }
 
 
-    .page-header {
-        padding: 6rem 5%;
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 65px;
+
+        left: 0;
+
+        width: 100%;
+
+        background-color: var(--navy);
+
+        padding: 1.5rem;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .nav-links.show {
+        display: flex;
+    }
+
+
+    .page-header h1 {
+        font-size: 2.3rem;
+    }
+
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .product-card img {
+        height: 220px;
+    }
+
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+
+    .footer-links {
+        flex-direction: column;
+
+        gap: 0.7rem;
     }
 }
