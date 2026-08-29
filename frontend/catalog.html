@@ -2,30 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catalog — Nkwen Traders</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<style>
-  .product-image {
-    width: 100%;
-    max-width: 250px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  .product-card {
-    display: inline-block;
-    margin: 10px;
-    text-align: center;
-  }
-</style>
 <body>
+
+  <header class="site-header">
+    <a href="index.html" class="wordmark">Nkwen <span>Traders</span></a>
+    <div class="header-right">
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="cart.html" class="cart-link" aria-label="View cart">
+        🧺<span id="cart-count" class="cart-badge" hidden>0</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
   <main>
-    <h1>Our Products</h1>
+    <div class="catalog-intro">
+      <p class="eyebrow">Full stock list</p>
+      <h1>Our Products</h1>
+      <p>Search or filter by category to find what you need before you visit.</p>
+    </div>
+
+    <div class="filter-bar">
+      <input type="search" id="catalog-search" placeholder="Search products…" aria-label="Search products">
+      <div class="filter-tabs" id="filter-tabs" role="group" aria-label="Filter by category"></div>
+    </div>
+    <p class="filter-empty" id="filter-empty" hidden>No products match your search.</p>
+
     <div id="catalog-grid" class="catalog-grid"></div>
     <p id="catalog-error" class="error-message" hidden>
       Sorry, we couldn't load the products right now.
     </p>
   </main>
-  <script src="catalog.js"></script>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="wordmark">Nkwen Traders</div>
+        <p>Everyday goods, honestly priced. Nkwen Market, Bamenda.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/catalog-filter.js"></script>
+  <script src="js/catalog-cart.js"></script>
 </body>
 </html>
